@@ -10,6 +10,19 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *totalBillAmountTextField;
+
+
+@property (strong, nonatomic) IBOutlet UISlider *numberOfPeopleSlider;
+
+@property (strong, nonatomic) IBOutlet UILabel *numberOfPeopleLabel;
+
+
+- (IBAction)calculateSplitAmount:(UIButton *)sender;
+
+- (IBAction)calculateNumberOfPeople:(UISlider *)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *amountToPayLabel;
 
 @end
 

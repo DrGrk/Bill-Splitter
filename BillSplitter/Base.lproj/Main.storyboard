@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,84 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2vo-bb-6fd">
+                                <rect key="frame" x="62.5" y="60" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.15704775528169015" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="mMp-mp-Lkl"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="X3L-2W-WFt">
+                                <rect key="frame" x="25.5" y="120" width="324" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="RC3-w8-JEH"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="calculateNumberOfPeople:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZXs-NP-pfP"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEe-0h-N9I">
+                                <rect key="frame" x="150" y="240" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="49D-vd-LmE"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xm9-AE-W2p"/>
+                                </constraints>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUp-0E-x58"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HED-R5-HHQ">
+                                <rect key="frame" x="137" y="321" width="100" height="25"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.15619498239436619" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EeI-jq-i5T"/>
+                                    <constraint firstAttribute="height" constant="25" id="giv-rl-LCt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSM-lX-lr8">
+                                <rect key="frame" x="162" y="180" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.16499779929577466" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XwK-9q-Iql"/>
+                                    <constraint firstAttribute="width" constant="50" id="n78-yv-zyT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2vo-bb-6fd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4dm-BY-lS6"/>
+                            <constraint firstItem="HED-R5-HHQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4fk-Zp-kPq"/>
+                            <constraint firstItem="HED-R5-HHQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4rE-c5-V7H"/>
+                            <constraint firstItem="MSM-lX-lr8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Amz-TK-Fqh"/>
+                            <constraint firstItem="X3L-2W-WFt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GpI-VF-Lw9"/>
+                            <constraint firstItem="MSM-lX-lr8" firstAttribute="top" secondItem="X3L-2W-WFt" secondAttribute="bottom" constant="30" id="HVu-0X-b3f"/>
+                            <constraint firstItem="2vo-bb-6fd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="NAb-5K-UEM"/>
+                            <constraint firstItem="rEe-0h-N9I" firstAttribute="top" secondItem="MSM-lX-lr8" secondAttribute="bottom" constant="30" id="Ots-yz-2tZ"/>
+                            <constraint firstItem="X3L-2W-WFt" firstAttribute="top" secondItem="2vo-bb-6fd" secondAttribute="bottom" constant="30" id="R09-kA-U7r"/>
+                            <constraint firstItem="rEe-0h-N9I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gyf-sU-4Ua"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountToPayLabel" destination="HED-R5-HHQ" id="7Ms-uk-V8t"/>
+                        <outlet property="numberOfPeopleLabel" destination="MSM-lX-lr8" id="X0P-eY-35C"/>
+                        <outlet property="numberOfPeopleSlider" destination="X3L-2W-WFt" id="35O-rD-raJ"/>
+                        <outlet property="totalBillAmountTextField" destination="2vo-bb-6fd" id="vz4-78-DnK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="84" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>
